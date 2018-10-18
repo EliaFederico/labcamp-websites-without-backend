@@ -1,8 +1,8 @@
 # "Building Simple Websites Without Backend" Labcamp
 
-Demo for Reply Labamp
+Demo for Reply Labcamp
 
-## To run the project
+## Run the project
 
 ```
 npm install

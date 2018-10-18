@@ -6,12 +6,12 @@ class ProductsList extends Component {
     super();
 
     this.state = {
-      products: []
+      products: {}
     };
   }
 
   componentDidMount = () => {
-    const rootRef = firebase.database().ref("/products");
+    const rootRef = firebase.database().ref("/group-1");
 
     rootRef.on("value", snapshot => {
       this.setState({

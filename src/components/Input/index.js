@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class Input extends Component {
   handleChange = event => {
     const { name, value, type } = event.target;
-    this.props.onChange(name, type == "number" ? parseInt(value) : value);
+    this.props.onChange(name, type === "number" ? parseInt(value) : value);
   };
 
   render = () => {
