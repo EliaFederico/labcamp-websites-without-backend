@@ -1,28 +1,33 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import * as firebase from "firebase";
+
+import ProductsList from "./components/ProductsList";
+import AddProduct from "./components/AddProduct";
+import NewProduct from "./components/NewProduct";
+
+import "./App.css";
+
+// Initialize Firebase
+const config = {
+  apiKey: "AIzaSyD-9xGzU36RhkNmg6B_NW0hMWS3egw_T3o",
+  authDomain: "labcamp-sites-without-backend.firebaseapp.com",
+  databaseURL: "https://labcamp-sites-without-backend.firebaseio.com",
+  projectId: "labcamp-sites-without-backend",
+  storageBucket: "labcamp-sites-without-backend.appspot.com",
+  messagingSenderId: "985712486505"
+};
+firebase.initializeApp(config);
 
 class App extends Component {
-  render() {
+  render = () => {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div>
+        <ProductsList />
+        <AddProduct />
+        <NewProduct />
       </div>
     );
-  }
+  };
 }
 
 export default App;
