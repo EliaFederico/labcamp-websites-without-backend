@@ -10,9 +10,11 @@ class Input extends Component {
     return (
       <input
         type={this.props.type}
+        className="form-control"
         onChange={this.handleChange}
         value={this.props.value}
         name={this.props.name}
+        placeholder={this.props.placeholder}
         min="0"
       />
     );

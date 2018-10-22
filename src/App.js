@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import * as firebase from "firebase";
+import "bootstrap";
 
 import ProductsList from "./components/ProductsList";
 import AddProduct from "./components/AddProduct";
@@ -21,9 +22,22 @@ firebase.initializeApp(config);
 class App extends Component {
   render = () => {
     return (
-      <div>
+      <div className="container">
+        <div className="jumbotron jumbotron-fluid">
+          <div className="container">
+            <h1 className="display-5">
+              Building simple Websites without backend
+            </h1>
+            <p className="lead">
+              This is a modified jumbotron that occupies the entire horizontal
+              space of its parent.
+            </p>
+          </div>
+        </div>
         <ProductsList />
+        <hr />
         <AddProduct />
+        <hr />
         <NewProduct />
       </div>
     );

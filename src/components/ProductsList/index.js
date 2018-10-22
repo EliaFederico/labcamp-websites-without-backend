@@ -24,17 +24,22 @@ class ProductsList extends Component {
     const { products } = this.state;
 
     return (
-      <div>
-        Product List
-        <ul>
-          {Object.keys(products).map((element, index) => {
-            return (
-              <li key={index}>
-                {element} - {products[element].count}
-              </li>
-            );
-          })}
-        </ul>
+      <div className="card">
+        <div className="card-header">Product List</div>
+        <div className="card-body">
+          <ul className="list-group">
+            {Object.keys(products).map((element, index) => {
+              return (
+                <li className="list-group-item" key={index}>
+                  {element}{" "}
+                  <span className="badge badge-pill badge-success">
+                    {products[element].count}
+                  </span>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
       </div>
     );
   };

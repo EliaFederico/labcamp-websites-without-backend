@@ -34,26 +34,37 @@ class NewProduct extends Component {
     const { productName, productQnt } = this.state;
 
     return (
-      <div>
-        New product
-        <Input
-          name="productName"
-          type="text"
-          onChange={this.handleInputChange}
-          value={productName}
-        />
-        <Input
-          name="productQnt"
-          type="number"
-          onChange={this.handleInputChange}
-          value={productQnt}
-        />
-        <button
-          disabled={productName === "" || productQnt === 0}
-          onClick={this.handleSubmitClick}
-        >
-          Aggiungi nuovo prodotto
-        </button>
+      <div className="card">
+        <div className="card-header">New product</div>
+        <div className="card-body">
+          <div className="form-inline">
+            <div className="form-group">
+              <Input
+                name="productName"
+                type="text"
+                onChange={this.handleInputChange}
+                value={productName}
+                placeholder="Nome del prodotto"
+              />
+            </div>
+            <div className="form-group mx-sm-3">
+              <Input
+                name="productQnt"
+                type="number"
+                onChange={this.handleInputChange}
+                value={productQnt}
+                placeholder="Quantità"
+              />
+            </div>
+            <button
+              className="btn btn-primary"
+              disabled={productName === "" || productQnt === 0}
+              onClick={this.handleSubmitClick}
+            >
+              Aggiungi nuovo prodotto
+            </button>
+          </div>
+        </div>
       </div>
     );
   };

@@ -41,19 +41,26 @@ class AddProduct extends Component {
     const { products, selectedOption } = this.state;
 
     return (
-      <div>
-        Add one product
-        <Select
-          value={selectedOption}
-          onChange={this.handleSelectChange}
-          options={Object.keys(products)}
-        />
-        <button
-          disabled={selectedOption === ""}
-          onClick={this.handleSubmitClick}
-        >
-          Aggiungi prodotto
-        </button>
+      <div className="card">
+        <div className="card-header">Add one product</div>
+        <div className="card-body">
+          <div className="input-group">
+            <Select
+              value={selectedOption}
+              onChange={this.handleSelectChange}
+              options={Object.keys(products)}
+            />
+            <div className="input-group-append">
+              <button
+                className="btn btn-primary"
+                disabled={selectedOption === ""}
+                onClick={this.handleSubmitClick}
+              >
+                Aggiungi prodotto
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     );
   };
