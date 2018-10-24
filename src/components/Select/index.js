@@ -2,15 +2,23 @@ import React, { Component } from "react";
 
 class Select extends Component {
   handleChange = event => {
-    this.props.onChange(event.target.value);
+    if (this.props.onChange) {
+      this.props.onChange(event.target.value);
+    }
   };
 
   render = () => {
     const { options, value } = this.props;
 
     return (
-      <select value={value} onChange={this.handleChange}>
-        <option value="" disabled />
+      <select
+        className="custom-select"
+        value={value}
+        onChange={this.handleChange}
+      >
+        <option value="" disabled>
+          Seleziona un prodotto
+        </option>
         {options.map((element, index) => {
           return (
             <option key={index} value={element}>
