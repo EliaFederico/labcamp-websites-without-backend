@@ -2,8 +2,11 @@ import React, { Component } from "react";
 
 class Input extends Component {
   handleChange = event => {
-    const { name, value, type } = event.target;
-    this.props.onChange(name, type === "number" ? parseInt(value) : value);
+    const { onChange } = this.props;
+    if (onChange) {
+      const { name, value, type } = event.target;
+      onChange(name, type === "number" ? parseInt(value) : value);
+    }
   };
 
   render = () => {

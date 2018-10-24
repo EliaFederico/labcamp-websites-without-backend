@@ -2,7 +2,10 @@ import React, { Component } from "react";
 
 class Select extends Component {
   handleChange = event => {
-    this.props.onChange(event.target.value);
+    const { onChange } = this.props;
+    if (onChange) {
+      onChange(event.target.value);
+    }
   };
 
   render = () => {
