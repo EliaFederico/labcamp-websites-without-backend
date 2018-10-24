@@ -11,7 +11,7 @@ class ProductsList extends Component {
   }
 
   componentDidMount = () => {
-    const rootRef = firebase.database().ref("/group-1");
+    const rootRef = firebase.database().ref("/master");
 
     rootRef.on("value", snapshot => {
       this.setState({

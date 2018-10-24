@@ -13,7 +13,7 @@ class AddProduct extends Component {
   }
 
   componentDidMount = () => {
-    const ref = firebase.database().ref("/group-1");
+    const ref = firebase.database().ref("/master");
 
     ref.on("value", snapshot => {
       this.setState({
@@ -31,7 +31,7 @@ class AddProduct extends Component {
   handleSubmitClick = async () => {
     const ref = firebase
       .database()
-      .ref(`/group-1/${this.state.selectedOption}/count`);
+      .ref(`/master/${this.state.selectedOption}/count`);
     await ref.transaction(currentCount => {
       return currentCount + 1;
     });

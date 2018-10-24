@@ -24,7 +24,7 @@ class NewProduct extends Component {
 
     firebase
       .database()
-      .ref(`/group-1/${productName}`)
+      .ref(`/master/${productName}`)
       .set({
         count: productQnt
       });
